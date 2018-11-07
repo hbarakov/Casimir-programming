@@ -9,6 +9,8 @@ y2 = - np.sqrt(1-x**2)
 
 plt.plot(x, y1, color='k')
 
+plt.axes().set_aspect('equal')
+
 plt.savefig('circle.png')
 
 
