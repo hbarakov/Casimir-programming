@@ -1,7 +1,7 @@
 import numpy as np
 
 def circle_circumference(r):
-    """circle_circumference(r) returns the circumference of a circle of radius r"""
+    """A function that calculates the circumference of a cirle with radius r"""
     return 2*np.pi*r
 
 print(circle_circumference(1))
