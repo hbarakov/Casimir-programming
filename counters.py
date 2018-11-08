@@ -3,7 +3,7 @@ from collections import Counter
 
     
 def count_words(text_string):
-    text = re.sub('[^a-z]+', ' ', text_string.lower())
+    text_string = re.sub('[^a-z]+', ' ', text_string.lower())
     return Counter(text_string.split())
     
 def count_letters(letter, text_string):
