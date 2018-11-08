@@ -1,6 +1,9 @@
 import re
+import nltk
+from string_to_sentences import string_to_sentences
 from counters import count_words
 from collections import Counter
+from nltk.corpus import gutenberg
 
 def context_count(word, sentences):
     """This counts all words that are in the same sentences as the given word"""
@@ -13,7 +16,12 @@ def context_count(word, sentences):
             wordcount += counts
     return wordcount
 
+text = ""
 
-#words = context_count("is",["This is the first sentence", "Another example this", "And"])
+for file_id in gutenberg.fileids():
+    text += gutenberg.raw(file_id)
+    
+#words = context_count("joe",string_to_sentences(text))
+words = count_words(text)
 
-#for item in words.most_common(10): print("{}\t{}".format(*item))
+for item in words.most_common(1000): print("{}\t{}".format(*item))
